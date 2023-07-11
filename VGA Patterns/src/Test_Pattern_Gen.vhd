@@ -13,9 +13,9 @@ generic(
 port (
     i_Clk      : in std_logic;
     i_TP_Index : in integer range 0 to g_Test_Patterns_Count-1; 
-    o_Red      : out std_logic_vector (3 downto 0) := (others => '0');
-    o_Green    : out std_logic_vector (3 downto 0) := (others => '0');
-    o_Blue     : out std_logic_vector (3 downto 0) := (others => '0') 
+    o_RED      : out std_logic_vector (3 downto 0) := (others => '0');
+    o_GRN    : out std_logic_vector (3 downto 0) := (others => '0');
+    o_BLU     : out std_logic_vector (3 downto 0) := (others => '0') 
     );
 end entity Test_Pattern_Gen;
 
@@ -27,25 +27,25 @@ begin
     begin
         case i_TP_Index is
             when 0 =>
-                o_Red <= (others => '0');
-                o_Green <= (others => '0');
-                o_Blue <= (others => '0');
+                o_RED <= (others => '0');
+                o_GRN <= (others => '0');
+                o_BLU <= (others => '0');
             when 1 =>
-                o_Red <= (others => '1');
-                o_Green <= (others => '0');
-                o_Blue <= (others => '0');
+                o_RED <= (others => '1');
+                o_GRN <= (others => '0');
+                o_BLU <= (others => '0');
             when 2 =>
-                o_Red <= (others => '0');
-                o_Green <= (others => '1');
-                o_Blue <= (others => '0');
+                o_RED <= (others => '0');
+                o_GRN <= (others => '1');
+                o_BLU <= (others => '0');
             when 3 =>
-                o_Red <= (others => '0');
-                o_Green <= (others => '0');
-                o_Blue <= (others => '1');                                       
+                o_RED <= (others => '0');
+                o_GRN <= (others => '0');
+                o_BLU <= (others => '1');                                       
             when others =>
-                o_Red <= (others => '0');
-                o_Green <= (others => '0');
-                o_Blue <= (others => '0');               
+                o_RED <= (others => '0');
+                o_GRN <= (others => '0');
+                o_BLU <= (others => '0');               
         end case;
     end process;                 
 
