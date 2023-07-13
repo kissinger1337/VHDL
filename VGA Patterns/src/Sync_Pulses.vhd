@@ -30,8 +30,8 @@ begin
                 if r_Row = g_All_Rows - 1 then --reached end both of row and col, reset
                     r_Col <= 0;
                     r_Row <= 0;
-                else
-                    r_Col <= 0; --reached end of one row only
+                else --reached end of one row only
+                    r_Col <= 0; 
                     r_Row <= r_Row + 1;
                 end if;
             else
@@ -41,7 +41,7 @@ begin
     end process p_Sync;
     
     --when in active area - pulse is 1, if not - 0
-    o_HSync <= '1' when r_Col < g_Active_Cols-1 else '0'; 
-    o_VSync <= '1' when r_Row < g_Active_Rows-1 else '0';
+    o_HSync <= '1' when r_Col < g_Active_Cols else '0'; 
+    o_VSync <= '1' when r_Row < g_Active_Rows else '0';
         
 end architecture RTL;

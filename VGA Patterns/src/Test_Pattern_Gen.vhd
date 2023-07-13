@@ -13,9 +13,9 @@ generic(
 port (
     i_Clk      : in std_logic;
     i_TP_Index : in integer range 0 to g_Test_Patterns_Count-1; 
-    o_RED      : out std_logic_vector (3 downto 0) := (others => '0');
-    o_GRN    : out std_logic_vector (3 downto 0) := (others => '0');
-    o_BLU     : out std_logic_vector (3 downto 0) := (others => '0') 
+    o_RED      : out std_logic_vector (3 downto 0);
+    o_GRN      : out std_logic_vector (3 downto 0);
+    o_BLU      : out std_logic_vector (3 downto 0) 
     );
 end entity Test_Pattern_Gen;
 

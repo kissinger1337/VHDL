@@ -26,7 +26,7 @@ begin
         --in ASCII 0 is X"30", 1 is X"31", 2 is X"32" ....
         r_First_4_Bits <= TO_INTEGER(unsigned(i_RX_Byte(7 downto 4))); --gets first number
         if r_First_4_Bits = 3 then --if we get ascii value of 0-9 from keyboard - input is correct and we can use it        
-            r_Second_4_Bits <= TO_INTEGER(unsigned(i_RX_Byte(7 downto 4)));
+            r_Second_4_Bits <= TO_INTEGER(unsigned(i_RX_Byte(3 downto 0)));
             if r_Second_4_Bits < g_Test_Patterns_Count then --got correct input - send it to other modules
                 o_TP_Index <= r_Second_4_Bits;
             end if;         
